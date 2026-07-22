@@ -29,10 +29,14 @@
 
 ---
 
-##  Технический стек
+##  Технологический стек
 
-* **Backend:** Python 3.11+,
-* **Frontend:** HTML5, CSS3, JavaScript (Vanilla JS)
+| Компонент      | Технологии                         |
+|----------------|------------------------------------|
+| **Backend**    | Python 3.11+                       |
+| **ML‑модель**  | RandomForest, Sk‑learn, Pandas     |
+| **Frontend**   | HTML5, CSS3, Vanilla JS            |
+| **Данные**     | CSV, обработка Pandas              |
 
 ---
 
