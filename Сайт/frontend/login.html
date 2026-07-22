@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход — Одобрено</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="auth-body">
+    <div class="auth-page">
+        <div class="auth-page__bg">
+            <div class="auth-page__gradient"></div>
+            <div class="auth-page__shapes">
+                <div class="auth-shape auth-shape--1"></div>
+                <div class="auth-shape auth-shape--2"></div>
+                <div class="auth-shape auth-shape--3"></div>
+            </div>
+        </div>
+
+        <div class="auth-container">
+            <a href="index.html" class="auth-back">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                На главную
+            </a>
+
+            <div class="auth-card animate-fade-in-up">
+                <div class="auth-card__header">
+                    <a href="index.html" class="nav__logo nav__logo--center">
+                        <img src="assets/logo.png" alt="Одобрено" class="nav__logo-img nav__logo-img--sm">
+                    </a>
+                    <h1 class="auth-card__title">С возвращением</h1>
+                    <p class="auth-card__subtitle">Войдите в свой аккаунт, чтобы продолжить</p>
+                </div>
+
+                <form class="auth-form" id="loginForm" action="/api/auth/login" method="POST">
+                    <div class="form-group">
+                        <label class="form-label" for="loginEmail">Email</label>
+                        <div class="form-input-wrapper">
+                            <svg class="form-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            <input type="email" id="loginEmail" name="email" class="form-input" placeholder="you@example.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="loginPassword">Пароль</label>
+                        <div class="form-input-wrapper">
+                            <svg class="form-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                            </svg>
+                            <input type="password" id="loginPassword" name="password" class="form-input" placeholder="••••••••" required minlength="8">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <label class="form-checkbox">
+                            <input type="checkbox" id="rememberMe">
+                            <span class="form-checkbox__box"></span>
+                            Запомнить меня
+                        </label>
+                        <a href="#" class="form-link">Забыли пароль?</a>
+                    </div>
+
+                    <button type="submit" class="btn btn--primary btn--block btn--lg" id="loginBtn">
+                        <span class="btn__text">Войти</span>
+                    </button>
+                </form>
+
+                <div class="auth-card__footer">
+                    <p>Нет аккаунта? <a href="register.html" class="form-link">Зарегистрироваться</a></p>
+                </div>
+
+                <ul class="auth-card__features">
+                    <li>14 дней пробного периода</li>
+                    <li>Прогноз одобрения до подачи заявки</li>
+                    <li>Данные защищены и не передаются третьим лицам</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

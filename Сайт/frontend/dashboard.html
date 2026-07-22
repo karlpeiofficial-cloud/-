@@ -1,0 +1,363 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет — Одобрено</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard">
+        <input type="radio" name="dashTab" id="tabRadioOverview" class="tab-radio" checked>
+        <input type="radio" name="dashTab" id="tabRadioAnalysis" class="tab-radio">
+        <input type="radio" name="dashTab" id="tabRadioHistory" class="tab-radio">
+        <input type="radio" name="dashTab" id="tabRadioAssistant" class="tab-radio">
+        <input type="radio" name="dashTab" id="tabRadioProfile" class="tab-radio">
+        <input type="checkbox" id="sidebarToggle" class="sidebar-toggle-input">
+
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar__header">
+                <a href="index.html" class="nav__logo">
+                    <img src="assets/logo.png" alt="Одобрено" class="nav__logo-img nav__logo-img--sm">
+                </a>
+            </div>
+            <nav class="sidebar__nav">
+                <label for="tabRadioOverview" class="sidebar__link sidebar__link--active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+                    </svg>
+                    Обзор
+                </label>
+                <label for="tabRadioAnalysis" class="sidebar__link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                    </svg>
+                    Новый анализ
+                </label>
+                <label for="tabRadioHistory" class="sidebar__link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    История
+                </label>
+                <label for="tabRadioAssistant" class="sidebar__link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                    </svg>
+                    ИИ-ассистент
+                </label>
+                <label for="tabRadioProfile" class="sidebar__link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                    </svg>
+                    Профиль
+                </label>
+            </nav>
+            <div class="sidebar__footer">
+                <a href="/api/auth/logout" class="sidebar__logout">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+                    </svg>
+                    Выйти
+                </a>
+            </div>
+        </aside>
+
+        <main class="dashboard__main">
+            <header class="dashboard__header">
+                <label for="sidebarToggle" class="dashboard__menu-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/>
+                    </svg>
+                </label>
+                <h1 class="dashboard__title">Личный кабинет</h1>
+                <div class="dashboard__user">
+                    <span class="trial-badge">Пробный период</span>
+                    <div class="dashboard__avatar">П</div>
+                </div>
+            </header>
+
+            <div class="dashboard__content">
+                <section class="tab-content tab-content--overview">
+                    <div class="overview-cards">
+                        <div class="overview-card">
+                            <div class="overview-card__icon overview-card__icon--score">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <div class="overview-card__info">
+                                <span class="overview-card__value">—</span>
+                                <span class="overview-card__label">Кредитный рейтинг</span>
+                            </div>
+                        </div>
+                        <div class="overview-card">
+                            <div class="overview-card__icon overview-card__icon--probability">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                                </svg>
+                            </div>
+                            <div class="overview-card__info">
+                                <span class="overview-card__value">—</span>
+                                <span class="overview-card__label">Вероятность одобрения</span>
+                            </div>
+                        </div>
+                        <div class="overview-card">
+                            <div class="overview-card__icon overview-card__icon--amount">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <div class="overview-card__info">
+                                <span class="overview-card__value">—</span>
+                                <span class="overview-card__label">Рекомендованная сумма</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="overview-welcome">
+                        <div class="overview-welcome__content">
+                            <h2>Добро пожаловать!</h2>
+                            <p>Пройдите первый анализ кредитоспособности, чтобы получить персональные рекомендации</p>
+                            <label for="tabRadioAnalysis" class="btn btn--primary">Пройти анализ</label>
+                        </div>
+                        <div class="overview-welcome__illustration">
+                            <svg viewBox="0 0 200 200" fill="none">
+                                <circle cx="100" cy="100" r="80" stroke="currentColor" stroke-width="2" opacity="0.1"/>
+                                <circle cx="100" cy="100" r="60" stroke="currentColor" stroke-width="2" opacity="0.2"/>
+                                <path d="M70 100l20 20 40-40" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="tab-content tab-content--analysis">
+                    <div class="analysis-form-container">
+                        <form class="analysis-form" id="analysisForm" action="/api/analysis/predict" method="POST">
+                            <h3 class="analysis-form__step-title">Личные данные и доход</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label class="form-label" for="age">Возраст</label>
+                                    <input type="number" id="age" name="age" class="form-input" placeholder="30" min="18" max="100" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="occupation">Профессия</label>
+                                    <select id="occupation" name="occupation" class="form-input form-select" required>
+                                        <option value="">Выберите...</option>
+                                        <option value="Scientist">Учёный</option>
+                                        <option value="Teacher">Учитель</option>
+                                        <option value="Engineer">Инженер</option>
+                                        <option value="Entrepreneur">Предприниматель</option>
+                                        <option value="Developer">Разработчик</option>
+                                        <option value="Lawyer">Юрист</option>
+                                        <option value="Media_Manager">Медиа-менеджер</option>
+                                        <option value="Doctor">Врач</option>
+                                        <option value="Journalist">Журналист</option>
+                                        <option value="Manager">Менеджер</option>
+                                        <option value="Accountant">Бухгалтер</option>
+                                        <option value="Musician">Музыкант</option>
+                                        <option value="Mechanic">Механик</option>
+                                        <option value="Writer">Писатель</option>
+                                        <option value="Architect">Архитектор</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="annualIncome">Годовой доход (₽)</label>
+                                    <input type="number" id="annualIncome" name="annual_income" class="form-input" placeholder="1200000" min="0" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="monthlyInhandSalary">Зарплата на руки (₽/мес)</label>
+                                    <input type="number" id="monthlyInhandSalary" name="monthly_inhand_salary" class="form-input" placeholder="80000" min="0" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="creditHistoryAge">Возраст кредитной истории (лет)</label>
+                                    <input type="number" id="creditHistoryAge" name="credit_history_age" class="form-input" placeholder="5" min="0" max="50">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="numBankAccounts">Кол-во банковских счетов</label>
+                                    <input type="number" id="numBankAccounts" name="num_bank_accounts" class="form-input" placeholder="3" min="0">
+                                </div>
+                            </div>
+
+                            <h3 class="analysis-form__step-title">Кредиты и задолженность</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label class="form-label" for="totalEmiPerMonth">EMI в месяц (₽)</label>
+                                    <input type="number" id="totalEmiPerMonth" name="total_emi_per_month" class="form-input" placeholder="15000" min="0">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="numCreditCard">Кол-во кредитных карт</label>
+                                    <input type="number" id="numCreditCard" name="num_credit_card" class="form-input" placeholder="2" min="0">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="interestRate">Процентная ставка (%)</label>
+                                    <input type="number" id="interestRate" name="interest_rate" class="form-input" placeholder="12" min="0" step="0.1">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="numOfLoan">Кол-во активных кредитов</label>
+                                    <input type="number" id="numOfLoan" name="num_of_loan" class="form-input" placeholder="2" min="0">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="outstandingDebt">Непогашенный долг (₽)</label>
+                                    <input type="number" id="outstandingDebt" name="outstanding_debt" class="form-input" placeholder="300000" min="0">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="creditUtilizationRatio">Утилизация кредита (%)</label>
+                                    <input type="number" id="creditUtilizationRatio" name="credit_utilization_ratio" class="form-input" placeholder="30" min="0" max="100" step="0.1">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="amountInvestedMonthly">Инвестиции в месяц (₽)</label>
+                                    <input type="number" id="amountInvestedMonthly" name="amount_invested_monthly" class="form-input" placeholder="10000" min="0">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="monthlyBalance">Баланс на конец месяца (₽)</label>
+                                    <input type="number" id="monthlyBalance" name="monthly_balance" class="form-input" placeholder="50000" min="0">
+                                </div>
+                            </div>
+
+                            <h3 class="analysis-form__step-title">Платёжная дисциплина и тип кредита</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label class="form-label" for="delayFromDueDate">Средняя просрочка (дней)</label>
+                                    <input type="number" id="delayFromDueDate" name="delay_from_due_date" class="form-input" placeholder="0" min="0">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="numOfDelayedPayment">Кол-во просроченных платежей</label>
+                                    <input type="number" id="numOfDelayedPayment" name="num_of_delayed_payment" class="form-input" placeholder="0" min="0">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="changedCreditLimit">Изменение кредитного лимита (%)</label>
+                                    <input type="number" id="changedCreditLimit" name="changed_credit_limit" class="form-input" placeholder="5" step="0.1">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="numCreditInquiries">Кол-во кредитных запросов</label>
+                                    <input type="number" id="numCreditInquiries" name="num_credit_inquiries" class="form-input" placeholder="2" min="0">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="creditMix">Кредитный микс</label>
+                                    <select id="creditMix" name="credit_mix" class="form-input form-select" required>
+                                        <option value="">Выберите...</option>
+                                        <option value="Good">Хороший</option>
+                                        <option value="Standard">Стандартный</option>
+                                        <option value="Bad">Плохой</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="paymentOfMinAmount">Оплата минимального платежа</label>
+                                    <select id="paymentOfMinAmount" name="payment_of_min_amount" class="form-input form-select" required>
+                                        <option value="">Выберите...</option>
+                                        <option value="Yes">Да</option>
+                                        <option value="No">Нет</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="paymentBehaviour">Платёжное поведение</label>
+                                    <select id="paymentBehaviour" name="payment_behaviour" class="form-input form-select" required>
+                                        <option value="">Выберите...</option>
+                                        <option value="High_spent_Small_value_payments">Высокие траты, малые платежи</option>
+                                        <option value="High_spent_Medium_value_payments">Высокие траты, средние платежи</option>
+                                        <option value="High_spent_Large_value_payments">Высокие траты, крупные платежи</option>
+                                        <option value="Low_spent_Small_value_payments">Низкие траты, малые платежи</option>
+                                        <option value="Low_spent_Medium_value_payments">Низкие траты, средние платежи</option>
+                                        <option value="Low_spent_Large_value_payments">Низкие траты, крупные платежи</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="typeOfLoan">Тип кредита</label>
+                                    <select id="typeOfLoan" name="type_of_loan" class="form-input form-select" required>
+                                        <option value="">Выберите...</option>
+                                        <option value="Auto Loan">Автокредит</option>
+                                        <option value="Credit-Builder Loan">Кредит для построения истории</option>
+                                        <option value="Debt Consolidation Loan">Консолидация долга</option>
+                                        <option value="Home Equity Loan">Кредит под залог жилья</option>
+                                        <option value="Mortgage Loan">Ипотека</option>
+                                        <option value="No Loan">Нет кредита</option>
+                                        <option value="Not Specified">Не указан</option>
+                                        <option value="Payday Loan">Займ до зарплаты</option>
+                                        <option value="Personal Loan">Потребительский</option>
+                                        <option value="Student Loan">Студенческий</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="analysis-form__actions">
+                                <button type="submit" class="btn btn--primary">Получить результат</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <section class="tab-content tab-content--history">
+                    <div class="history-list">
+                        <div class="empty-state">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <p>Пока нет проведённых анализов</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="tab-content tab-content--assistant">
+                    <div class="chat-container">
+                        <div class="chat-messages">
+                            <div class="chat-message chat-message--bot">
+                                <div class="chat-message__avatar">AI</div>
+                                <div class="chat-message__bubble">
+                                    Здравствуйте! Я ваш ИИ-ассистент по кредитным вопросам. Спрашивайте о кредитах, скоринге или ваших результатах анализа.
+                                </div>
+                            </div>
+                        </div>
+                        <form class="chat-input">
+                            <input type="text" class="form-input" placeholder="Напишите сообщение..." autocomplete="off">
+                            <button type="submit" class="btn btn--primary btn--icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </section>
+
+                <section class="tab-content tab-content--profile">
+                    <div class="profile-container">
+                        <div class="profile-card">
+                            <div class="profile-card__header">
+                                <div class="profile-card__avatar">П</div>
+                                <div>
+                                    <h3>Пользователь</h3>
+                                    <p>user@example.com</p>
+                                </div>
+                            </div>
+                            <form class="profile-form">
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label class="form-label" for="profileNameInput">Имя</label>
+                                        <input type="text" id="profileNameInput" class="form-input" placeholder="Иван Иванов">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="profilePhone">Телефон</label>
+                                        <input type="tel" id="profilePhone" class="form-input" placeholder="+7 (999) 123-45-67">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="profileCity">Город</label>
+                                        <input type="text" id="profileCity" class="form-input" placeholder="Москва">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="profileBirthdate">Дата рождения</label>
+                                        <input type="date" id="profileBirthdate" class="form-input">
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn--primary">Сохранить изменения</button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
