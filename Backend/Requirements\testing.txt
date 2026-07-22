@@ -116,35 +116,3 @@ def predict_credit_score(raw_data):
         pred_label = pred_class
     
     return pred_class, pred_label
-
-# ------------------- 4. Пример использования ----------------------------
-if __name__ == "__main__":
-    # Пример данных нового клиента тут только обязательные ключи
-    new_customer = {
-        'age': 35,
-        'annual_income': 45000,
-        'monthly_inhand_salary': 2800.5,
-        'credit_history_age': 120,
-        'total_emi_per_month': 350.75,
-        'num_bank_accounts': 2,
-        'num_credit_card': 3,
-        'interest_rate': 8.5,
-        'num_of_loan': 2,
-        'delay_from_due_date': 0,
-        'num_of_delayed_payment': 1,
-        'changed_credit_limit': 12.0,
-        'num_credit_inquiries': 2,
-        'outstanding_debt': 5500.0,
-        'credit_utilization_ratio': 0.35,
-        'amount_invested_monthly': 120.0,
-        'monthly_balance': 350.0,
-        'occupation': 'Scientist',
-        'credit_mix': 'Good',
-        'payment_of_min_amount': 'No',
-        'payment_behaviour': 'High_spent_Small_value_payments',
-        'type_of_loan': ['Auto Loan', 'Personal Loan']
-    }
-    
-    pred_class, pred_label = predict_credit_score(new_customer)
-    print(f" Предсказанный класс (числовой 0 - плохо 1 - средний 2 - хороший): {pred_class}")
-    print(f" Категория: {pred_label}")
